@@ -3,6 +3,7 @@
 
     <declare-styleable name="CountDownView">
         <attr name="textSize" format="dimension" />
+        <attr name="defaultTime" format="integer" />
     </declare-styleable>
 
 </resources>

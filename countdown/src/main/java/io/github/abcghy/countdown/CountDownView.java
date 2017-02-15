@@ -50,7 +50,6 @@ public class CountDownView extends View {
         a.recycle();
 
         initPaint();
-        init();
     }
 
     private Paint mPaint;
@@ -66,25 +65,25 @@ public class CountDownView extends View {
         mPaint.setTextAlign(Paint.Align.CENTER);
     }
 
-    private void init() {
+    public void start() {
         Observable.interval(1, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<Long>() {
                     @Override
                     public void onCompleted() {
-                        Log.d("test", "onCompleted");
+//                        Log.d("test", "onCompleted");
 
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        Log.d("test", "onError");
+//                        Log.d("test", "onError");
                     }
 
                     @Override
                     public void onNext(Long aLong) {
-                        Log.d("test", "onNext");
+//                        Log.d("test", "onNext");
                         calculateTargetTime();
                         invalidate();
                     }

@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         countDownView = (CountDownView) findViewById(R.id.count_down_view);
-        countDownView.setCountDownTime(System.currentTimeMillis() + 100000);
+        countDownView.setCountDownTime(System.currentTimeMillis() + 1000000);
+        countDownView.start();
     }
 }
